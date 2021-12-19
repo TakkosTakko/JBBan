@@ -32,6 +32,8 @@ public class Config {
             cfg.set("AutoLock", Boolean.TRUE);
             cfg.set("NoRechte", "&cDu hast keine Zugriff auf diesen Befehl!");
             cfg.set("Nothere", "&cDies ist kein Spieler!");
+            cfg.set("error", "&4Error!");
+            cfg.set("info", "&bInfo!");
             cfg.options().copyDefaults(true);
 
             JBBan.saveYourConfig(cfg, file);
@@ -48,6 +50,13 @@ public class Config {
 
     public static String Permission0 () {
         return cfg.getString("Permission0").replaceAll("&", "§");
+    }
+
+    public static String error () {
+        return cfg.getString("error").replaceAll("&", "§");
+    }
+    public static String info () {
+        return cfg.getString("info").replaceAll("&", "§");
     }
 
     public static String Permission1 () {

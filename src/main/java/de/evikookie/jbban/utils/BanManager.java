@@ -20,7 +20,7 @@ public class BanManager {
         }
         MySQL.update("INSERT INTO BannedPlayers (SpielerName, UUID, Ende, Grund) VALUES ('" + playername + "', '" + uuid + "', '" + end + "', '" + reason + "')");
         if (Bukkit.getPlayer(playername) != null)
-            Bukkit.getPlayer(playername).kickPlayer(String.valueOf(JBBan.error) + "\n\nwurdest Global gebannt!\n\nGrund:" + getReason(uuid) + "\n\n" + getRemainingTime(uuid));
+            Bukkit.getPlayer(playername).kickPlayer(Config.error() + "\n\nwurdest Global gebannt!\n\nGrund:" + getReason(uuid) + "\n\n" + getRemainingTime(uuid));
     }
 
     public static void unban(String uuid) {

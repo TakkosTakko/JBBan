@@ -4,7 +4,6 @@ import de.evikookie.jbban.commands.*;
 import de.evikookie.jbban.listener.Join;
 import de.evikookie.jbban.listener.Login;
 import de.evikookie.jbban.utils.Config;
-import de.evikookie.jbban.utils.FM;
 import de.evikookie.jbban.utils.MySQL;
 import de.evikookie.jbban.utils.SetupMySQL;
 import org.bukkit.Bukkit;
@@ -12,7 +11,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -37,9 +35,6 @@ public final class JBBan extends JavaPlugin {
         Config.initConfig();
         MySQL.connect();
         MySQL.createTable();
-
-
-
 
         Bukkit.getConsoleSender().sendMessage(Config.Prefix() + "Enabled!");
     }

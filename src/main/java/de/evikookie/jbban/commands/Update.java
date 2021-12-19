@@ -2,6 +2,7 @@ package de.evikookie.jbban.commands;
 
 import de.evikookie.jbban.JBBan;
 import de.evikookie.jbban.utils.BanManager;
+import de.evikookie.jbban.utils.Config;
 import de.evikookie.jbban.utils.MySQL;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,18 +18,18 @@ public class Update implements CommandExecutor {
                     for (int i = 1; i < args.length; i++)
                         reason = String.valueOf(reason) + args[i] + " ";
                     MySQL.update("UPDATE bannedplayers SET Grund='" + reason + "' WHERE UUID='" + BanManager.getUUID(playername) + "'");
-                    sender.sendMessage(String.valueOf(JBBan.info) + "Du hast den Bangrund von + playername + "+ BanManager.getUUID(playername) + "zu + reason + " );
+                    sender.sendMessage(Config.error() + "Du hast den Bangrund von + playername + "+ BanManager.getUUID(playername) + "zu + reason + " );
                 } else {
-                    sender.sendMessage(String.valueOf(JBBan.error) + "Konnte Befehl nicht erfolgreich ausf");
-                            sender.sendMessage(String.valueOf(JBBan.info) + "Spieler ist nicht gebannt!");
+                    sender.sendMessage(Config.error() + "Konnte Befehl nicht erfolgreich ausf");
+                            sender.sendMessage(Config.info() + "Spieler ist nicht gebannt!");
                 }
             } else {
-                sender.sendMessage(String.valueOf(JBBan.error) + "Konnte Befehl nicht erfolgreich ausf");
-                        sender.sendMessage(String.valueOf(JBBan.info) + "Bitte benutze die Syntax: /update <Spieler> <NeuerGrund>");
+                sender.sendMessage(Config.error() + "Konnte Befehl nicht erfolgreich ausf");
+                        sender.sendMessage(Config.info() + "Bitte benutze die Syntax: /update <Spieler> <NeuerGrund>");
             }
         } else {
-            sender.sendMessage(String.valueOf(JBBan.error) + "Konnte Befehl nicht erfolgreich ausf");
-                    sender.sendMessage(String.valueOf(JBBan.info) + "Du besitzt nicht die benRechte!");
+            sender.sendMessage(Config.error() + "Konnte Befehl nicht erfolgreich ausf");
+                    sender.sendMessage(Config.info() + "Du besitzt nicht die benRechte!");
         }
         return false;
     }

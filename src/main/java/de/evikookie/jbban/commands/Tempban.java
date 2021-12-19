@@ -19,13 +19,13 @@ public class Tempban implements CommandExecutor {
                     try {
                         value = Integer.parseInt(args[1]);
                     } catch (NumberFormatException ex) {
-                        sender.sendMessage(String.valueOf(JBBan.error) + "Konnte Befehl nicht erfolgreich ausf");
-                                sender.sendMessage(String.valueOf(JBBan.info) + "<Zahlenwert> muss eine Zahl sein!");
+                        sender.sendMessage(Config.error() + "Konnte Befehl nicht erfolgreich ausf");
+                                sender.sendMessage(Config.error() + "<Zahlenwert> muss eine Zahl sein!");
                         return true;
                     }
                     if (value >= 500L) {
-                        sender.sendMessage(String.valueOf(JBBan.error) + "Konnte Befehl nicht erfolgreich ausf");
-                                sender.sendMessage(String.valueOf(JBBan.info) + "Diese Zahl muss unter 500 liegen!");
+                        sender.sendMessage(String.valueOf(Config.error()) + "Konnte Befehl nicht erfolgreich ausf");
+                                sender.sendMessage(String.valueOf(Config.error()) + "Diese Zahl muss unter 500 liegen!");
                     }
                     String unitString = args[2];
                     String reason = "";
