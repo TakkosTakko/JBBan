@@ -1,0 +1,15 @@
+name: JBBan
+version: '${project.version}'
+main: de.evikookie.jbban.JBBan
+api-version: 1.17
+commands:
+  ban:
+    description: ban
+  check:
+    description: check
+  tempban:
+    description: tempban
+  unban:
+    description: unban
+  update:
+    description: update
