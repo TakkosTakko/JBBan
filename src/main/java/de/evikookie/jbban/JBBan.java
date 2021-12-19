@@ -20,12 +20,6 @@ import java.io.IOException;
 
 public final class JBBan extends JavaPlugin {
 
-    public static String prefix = "test";
-
-    public static String error = "[error";
-
-    public static String info = "[info";
-
     public static boolean save = false;
 
     public static boolean autoLock = true;
@@ -47,7 +41,7 @@ public final class JBBan extends JavaPlugin {
 
 
 
-        Bukkit.getConsoleSender().sendMessage(String.valueOf(prefix) + "Enabled!");
+        Bukkit.getConsoleSender().sendMessage(Config.Prefix() + "Enabled!");
     }
 
 
